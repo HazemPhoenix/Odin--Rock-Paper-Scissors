@@ -52,3 +52,5 @@ function game() {
   else if (playerScore < computerScore) console.log("Computer Wins!");
   else console.log("It's a Draw!");
 }
+
+//testing something
