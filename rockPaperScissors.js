@@ -19,9 +19,7 @@ let getComputerChoice = () => {
   } else return "scissors";
 };
 
-//make a function that takes user selection and compares it with computer selection
-//and then return the result, also use toLowerCase to make playerSelection parameter case
-//insensitive
+//make a function that takes user selection and compares it with computer selection and then return the result, also use toLowerCase to make playerSelection parameter case insensitive
 
 function playRound(playerSelection) {
   let computerSelection = getComputerChoice();
@@ -47,16 +45,16 @@ function playRound(playerSelection) {
   }
   if (player === 5) {
     result.textContent = "Player Wins the Game!!!";
-    disable();
+    disable(true);
   } else if (computer === 5) {
     result.textContent = "Computer Wins the Game!!!";
-    disable();
+    disable(true);
   }
 }
-function disable() {
-  rockBtn.disabled = true;
-  paperBtn.disabled = true;
-  scissorsBtn.disabled = true;
+function disable(Disable) {
+  rockBtn.disabled = Disable;
+  paperBtn.disabled = Disable;
+  scissorsBtn.disabled = Disable;
 }
 
 rockBtn.addEventListener("click", () => {
@@ -78,7 +76,5 @@ function resetGame() {
   computer = 0;
   playerScore.textContent = "0";
   computerScore.textContent = "0";
-  rockBtn.disabled = false;
-  paperBtn.disabled = false;
-  scissorsBtn.disabled = false;
+  disable(false);
 }
